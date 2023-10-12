@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 
 function WeatherApp() {
   const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState(''); // State for the input field
+  const [city, setCity] = useState(''); 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_KEY = '784a96ee02e66cfb642b704dfb2625eb';
-
+  const API_KEY = '784a96ee02e66cfb642b704dfb2625eb'; 
   useEffect(() => {
     if (city === '') {
       return;
+    }
 
     setLoading(true);
     setError(null);
 
-   
+    
     fetch(`https://openweathermap.org/api=${city}&appid=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
